@@ -1,0 +1,38 @@
+{% include 'main/includes/header.html' %}
+
+
+<div class="container">
+
+    <div class="row mt-5">
+
+        <div class="col-md-9">
+
+            <div>
+                <h1 class="h1">{{tutorial.tutorial_title}}</h1>
+                <h5 class="h5">{{tutorial.tutorial_content|safe}}</h5>
+                <h6 class="h6" style="font-weight: bold;">{{tutorial.tutorial_published}}</h6>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+
+
+            <ul class="list-group">
+                {% for tuts in tutorials_in_series %}
+                {% if forloop.counter0 == index_of_the_tutorial%}
+                <li class="list-group-item active"><a
+                        style="color:black;" href="{{tuts.tutorial_slug}}">{{tuts.tutorial_title}}</a></li>
+                {% else %}
+                <li class="list-group-item "><a
+                        style="color:black;" href="{{tuts.tutorial_slug}}">{{tuts.tutorial_title}}</a></li>
+                {% endif %}
+                {% endfor%}
+            </ul>
+        </div>
+
+    </div>
+
+
+</div>
+</div>
+

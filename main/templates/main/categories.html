@@ -1,0 +1,24 @@
+{% include 'main/includes/header.html' %}
+
+
+<div class="container">
+
+    <div class="row">
+        {% for cat in categories %}
+        <div class="col-md-4">
+
+            <div class="card mt-2 ml-2" style="width: 18rem;">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <h5 class="card-title">{{cat.tutorial_category}}</h5>
+                    <p class="card-text">{{cat.category_summary}}</p>
+
+                    <a href="{{cat.category_slug}}" class="btn btn-primary">more</a>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+

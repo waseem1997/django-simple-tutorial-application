@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Tutorial</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+
+            {% if user.is_authenticated %}
+               <li class="nav-item">
+                   <a class="nav-link" href="/account">{{user.username}}</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/logout">logout</a>
+               </li>
+               {% else %}
+
+               <li class="nav-item">
+                   <a class="nav-link" href="/register">register</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/login">login</a>
+               </li>
+               {% endif %}
+
+
+
+
+
+
+
+        </ul>
+    </div>
+</nav>
+

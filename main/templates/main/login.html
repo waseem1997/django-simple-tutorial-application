@@ -1,0 +1,18 @@
+{% include 'main/includes/header.html' %}
+
+
+<div class="container">
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <strong>if you don't have an account <a href="register/">Register</a> to join us</strong>
+</div>
+
+
+
+
+
